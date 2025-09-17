@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dynamic Profile — DevConnect</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style2.css" />
+  <link rel="stylesheet" href="style3.css" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- PROFILE SHELL with JSON mapping -->
+  <main id="profile-shell"
+        class="profile-shell"
+        data-uid="u_aashoo"
+        data-status="VIP"
+        data-theme="premium"
+        data-level="28"
+        data-xp="18450"
+        data-followers="985"
+        data-following="230"
+        data-problems="124"
+        data-rating="4.9"
+        data-coins="5200">
+
+    <!-- Banner (dynamic background) -->
+    <section class="profile-banner" id="profile-banner" style="background-image:url('assets/banners/cyberpunk-blue.jpg')">
+      <div class="banner-overlay">
+        <div class="banner-left">
+          <!-- Avatar -->
+          <div class="avatar-wrap" id="avatar-wrap">
+            <div class="avatar-frame" id="avatar-frame">
+              <img src="assets/avatars/aashoo.png" alt="User Avatar" class="avatar-img" id="avatar-img">
+              <!-- Optional dynamic frame -->
+              <img src="assets/frames/vip-gold.png" alt="Frame" class="avatar-frame-img" id="avatar-frame-img">
+              <!-- Glow -->
+              <svg class="avatar-glow" viewBox="0 0 200 200">
+                <defs>
+                  <radialGradient id="g1" cx="50%" cy="30%">
+                    <stop offset="0%" stop-color="#00eaff" stop-opacity="0.9"/>
+                    <stop offset="60%" stop-color="#8000ff" stop-opacity="0.12"/>
+                    <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+                  </radialGradient>
+                </defs>
+                <circle cx="100" cy="100" r="90" fill="url(#g1)"></circle>
+              </svg>
+            </div>
+            <!-- Level -->
+            <div class="level-bubble" id="level-bubble">
+              <span class="lvl">Lv</span>
+              <strong id="level-num">28</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="banner-right">
+          <!-- Name, title, status -->
+          <div class="name-row">
+            <h1 class="profile-name" id="profile-name">Aashoo Sharma</h1>
+            <div class="title-pill" id="title-pill">Night Coder</div>
+            <div class="pro-badge" id="pro-badge">VIP</div>
+          </div>
+          <p class="profile-sub" id="profile-sub">Full-stack Dev • DevOps • Cybersecurity • AI/IoT • Jarvis Builder</p>
+
+          <!-- Buttons -->
+          <div class="action-row">
+            <button class="btn follow-btn" id="follow-btn">Follow</button>
+            <button class="btn msg-btn" id="message-btn">Message</button>
+            <button class="btn connect-btn" id="connect-btn">Connect</button>
+            <div class="menu-ellipsis">
+              <button class="icon-btn" id="more-btn">⋯</button>
+            </div>
+          </div>
+
+          <!-- Stats -->
+          <div class="quick-stats">
+            <div class="stat">
+              <div class="stat-num" id="stat-problems">124</div>
+              <div class="stat-label">Problems</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num" id="stat-followers">985</div>
+              <div class="stat-label">Followers</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num" id="stat-rating">4.9</div>
+              <div class="stat-label">Rating</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN BODY -->
+    <section class="profile-main">
+      <div class="col-left">
+        <!-- About -->
+        <div class="card pro-card">
+          <h3>About</h3>
+          <p id="about-text">I build AI assistants, DevOps pipelines and secure IoT systems. Passionate about clean code and automation.</p>
+          <ul class="meta-list">
+            <li><strong>Location:</strong> <span id="meta-location">Jaipur, India</span></li>
+            <li><strong>Works at:</strong> <span id="meta-work">Self-project / Freelance</span></li>
+            <li><strong>Education:</strong> <span id="meta-edu">B.Tech (CSE), Diploma (Electronics)</span></li>
+            <li><strong>Website:</strong> <a href="https://AashooSharma.tech" id="profile-website">AashooSharma.tech</a></li>
+            <li><strong>GitHub:</strong> <a href="https://github.com/aashoo" id="profile-github">github.com/aashoo</a></li>
+          </ul>
+          <!-- Skills -->
+          <div class="skill-tags" id="skill-tags">
+            <span class="tag">Python</span>
+            <span class="tag">DevOps</span>
+            <span class="tag">CyberSec</span>
+            <span class="tag">IoT</span>
+            <span class="tag">AI/ML</span>
+          </div>
+          <div class="contact-quick">
+            <a href="#" class="small-btn">Email</a>
+            <a href="#" class="small-btn">Schedule</a>
+          </div>
+        </div>
+        <div class="card contact-info-card">
+  <h3>Contact & Social</h3>
+  <ul>
+    <li><strong>Email:</strong> <span id="meta-email">aashoo@example.com</span></li>
+    <li><strong>Phone:</strong> <span id="meta-phone">+91-XXXXXXXXXX</span></li>
+    <li><strong>LinkedIn:</strong> <a href="#" id="social-linkedin" target="_blank">Profile</a></li>
+    <li><strong>Instagram:</strong> <a href="#" id="social-instagram" target="_blank">Profile</a></li>
+    <li><strong>LeetCode:</strong> <a href="#" id="social-leetcode" target="_blank">Profile</a></li>
+    <li><strong>Coins:</strong> <span id="coins-balance">5200</span> 💰</li>
+  </ul>
+</div>
+<div class="card certs-card">
+  <h3>Certifications & Licenses</h3>
+  <ul id="certifications-list">
+    <!-- JS will dynamically insert each certification -->
+  </ul>
+</div>
+
+        <!-- Achievements -->
+        <div class="card achievements-card">
+          <h3>Achievements & Cosmetics</h3>
+          <div class="badges-row" id="badges-row">
+            <div class="badge-item"><img src="assets/badges/pro-hacker.png" alt="badge"></div>
+            <div class="badge-item"><img src="assets/badges/top-dev.png" alt="badge"></div>
+            <div class="badge-item"><img src="assets/badges/ai-builder.png" alt="badge"></div>
+          </div>
+        </div>
+
+        <!-- Activity -->
+        <div class="card activity-card">
+          <h3>Recent Activity</h3>
+          <ul class="activity-list" id="activity-list">
+            <li>🏆 100+ problems solved</li>
+            <li>🚀 Deployed 10+ projects</li>
+            <li>💖 Created AI girlfriend</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Achievements Section -->
+      <div class="card achievements-card">
+        <h3>Achievements & Highlights</h3>
+        <ul id="achievements-list" class="achievements-list">
+          <!-- JS will dynamically insert each achievement here -->
+        </ul>
+      </div>
+
+      <!-- Badges Section -->
+      <div class="card badges-card">
+        <h3>Badges</h3>
+        <div id="badges-row" class="badges-row">
+          <!-- JS will dynamically populate badges -->
+        </div>
+      </div>
+
+      <!-- Projects Section -->
+      <div class="card projects-card">
+        <h3>Portfolio & Projects</h3>
+        <div id="projects-grid" class="projects-grid">
+          <!-- JS will dynamically insert project cards -->
+        </div>
+      </div>
+
+      <!-- Recent Activity Section -->
+      <div class="card activity-card">
+        <h3>Recent Activity</h3>
+        <ul id="activity-list" class="activity-list">
+          <!-- JS will populate recent activity logs dynamically -->
+        </ul>
+      </div>
+
+      <!-- Latest Posts Section -->
+      <div class="card posts-card">
+        <div class="posts-header">
+          <h3>Latest Posts</h3>
+          <div class="posts-filter">
+            <select id="post-filter">
+              <option value="all">All</option>
+              <option value="projects">Projects</option>
+              <option value="protips">Pro Tips</option>
+            </select>
+          </div>
+        </div>
+        <div id="posts-list" class="posts-list">
+          <!-- JS will dynamically insert post items -->
+        </div>
+      </div>
+
+      <!-- Store / Cosmetic Shop Section -->
+      <div class="card store-card">
+        <h3>Cosmetics Store</h3>
+        <div id="store-items" class="store-items">
+          <!-- JS will dynamically insert store items -->
+        </div>
+      </div>
+
+      <!-- Leaderboard Section -->
+      <div class="card mini-leaderboard">
+        <h3>Leaderboard</h3>
+        <ol class="leader-list">
+          <li><strong>Aashoo</strong> <span>#1</span></li>
+          <li><strong>Ayushi</strong> <span>#2</span></li>
+          <li><strong>Rahul</strong> <span>#3</span></li>
+        </ol>
+        <a href="#" class="small-btn outline">View Full</a>
+      </div>
+
+      <!-- Quick Settings -->
+      <!--<div class="card quick-settings">
+        <h3>Profile Settings</h3>
+        <label class="toggle"><input type="checkbox" id="toggle-animated" checked> Animated Avatar</label>
+        <label class="toggle"><input type="checkbox" id="toggle-msgfx" checked> Message Effects</label>
+        <label class="toggle"><input type="checkbox" id="toggle-probadge" checked> Show PRO Badge</label>
+      </div>-->
+      <!-- Settings Toggle Button -->
+<button id="profile-settings-toggle" class="settings-toggle-btn" title="Edit Profile ⚙️">
+  ⚙️
+</button>
+
+<!-- Profile Settings Popup -->
+<div class="profile-settings-popup hidden" id="profile-settings-popup">
+  <div class="popup-header">
+    <h3>Profile Settings</h3>
+    <button id="close-settings-popup" class="close-btn">✖</button>
+  </div>
+
+  <div class="popup-body">
+    <!-- Edit Profile Details -->
+    <div class="settings-group">
+      <h4>Edit Profile</h4>
+      <label>Full Name: <input type="text" id="edit-name" value="Aashoo Sharma"></label>
+      <label>Title: <input type="text" id="edit-title" value="Night Coder"></label>
+      <label>Subtitle: <input type="text" id="edit-subtitle" value="Full-stack Dev • DevOps • Cybersecurity • AI/IoT • Jarvis Builder"></label>
+      <label>About Me: <textarea id="edit-about">I build AI assistants, DevOps pipelines and secure IoT systems. Passionate about clean code and automation.</textarea></label>
+      <button class="small-btn" id="save-profile-btn">Save Changes</button>
+    </div>
+
+    <!-- Contact Info Management -->
+    <div class="settings-group">
+      <h4>Contact Info</h4>
+      <label>Email: <input type="email" id="edit-email" value="aashoo@example.com"></label>
+      <label>Phone: <input type="text" id="edit-phone" value="+91-XXXXXXXXXX"></label>
+      <div class="toggle">
+        <input type="checkbox" id="toggle-show-email" checked> Show Email Publicly
+      </div>
+      <div class="toggle">
+        <input type="checkbox" id="toggle-show-phone" checked> Show Phone Publicly
+      </div>
+    </div>
+
+    <!-- Social Links -->
+    <div class="settings-group">
+      <h4>Social Links</h4>
+      <label>LinkedIn: <input type="url" id="edit-linkedin" value="https://linkedin.com/in/aashoo"></label>
+      <label>GitHub: <input type="url" id="edit-github" value="https://github.com/aashoo"></label>
+      <label>Instagram: <input type="url" id="edit-instagram" value="https://instagram.com/aashooSharma"></label>
+      <label>LeetCode: <input type="url" id="edit-leetcode" value="https://leetcode.com/aashoo"></label>
+      <div class="toggle">
+        <input type="checkbox" id="toggle-show-socials" checked> Show Social Links Publicly
+      </div>
+    </div>
+
+    <!-- Skills / Achievements / Projects Management -->
+    <div class="settings-group">
+      <h4>Skills & Achievements</h4>
+      <button class="small-btn" id="manage-skills-btn">Add / Remove Skills</button>
+      <button class="small-btn" id="manage-achievements-btn">Add / Remove Achievements</button>
+      <button class="small-btn" id="manage-projects-btn">Manage Projects</button>
+    </div>
+
+    <!-- Display Toggles -->
+    <div class="settings-group">
+      <h4>Display Settings</h4>
+      <div class="toggle">
+        <input type="checkbox" id="toggle-animated" checked> Animated Avatar
+      </div>
+      <div class="toggle">
+        <input type="checkbox" id="toggle-msgfx" checked> Message Effects
+      </div>
+      <div class="toggle">
+        <input type="checkbox" id="toggle-probadge" checked> Show PRO Badge
+      </div>
+      <div class="toggle">
+        <input type="checkbox" id="toggle-show-xp" checked> Show Level / XP
+      </div>
+      <div class="toggle">
+        <input type="checkbox" id="toggle-show-achievements" checked> Show Achievements
+      </div>
+      <div class="toggle">
+        <input type="checkbox" id="toggle-show-projects" checked> Show Projects
+      </div>
+      <div class="toggle">
+        <input type="checkbox" id="toggle-show-posts" checked> Show Posts
+      </div>
+    </div>
+
+    <!-- Security -->
+    <div class="settings-group">
+      <h4>Security</h4>
+      <label>Change Password: <input type="password" id="edit-password" placeholder="New Password"></label>
+      <button class="small-btn" id="save-password-btn">Update Password</button>
+    </div>
+
+    <!-- Coins / Rewards -->
+    <div class="settings-group">
+      <h4>Coins & Rewards</h4>
+      <div>Current Balance: <span id="coins-balance">5200</span> 💰</div>
+      <button class="small-btn" id="manage-coins-btn">Manage Coins / Rewards</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const settingsToggle = document.getElementById('profile-settings-toggle');
+const settingsPopup = document.getElementById('profile-settings-popup');
+const closePopup = document.getElementById('close-settings-popup');
+
+// Open / Close popup
+settingsToggle.addEventListener('click', () => {
+  settingsPopup.classList.toggle('hidden');
+});
+closePopup.addEventListener('click', () => {
+  settingsPopup.classList.add('hidden');
+});
+
+// Save changes dynamically
+document.getElementById('save-profile-btn').addEventListener('click', () => {
+  const name = document.getElementById('edit-name').value;
+  const title = document.getElementById('edit-title').value;
+  const subtitle = document.getElementById('edit-subtitle').value;
+  const about = document.getElementById('edit-about').value;
+
+  document.getElementById('profile-name').textContent = name;
+  document.getElementById('title-pill').textContent = title;
+  document.getElementById('profile-sub').textContent = subtitle;
+  document.getElementById('about-text').textContent = about;
+
+  // Contact toggles
+  const showEmail = document.getElementById('toggle-show-email').checked;
+  const showPhone = document.getElementById('toggle-show-phone').checked;
+
+  if(document.getElementById('meta-email')) document.getElementById('meta-email').style.display = showEmail ? 'block' : 'none';
+  if(document.getElementById('meta-phone')) document.getElementById('meta-phone').style.display = showPhone ? 'block' : 'none';
+
+  // Social toggles
+  const showSocials = document.getElementById('toggle-show-socials').checked;
+  document.getElementById('social-links-row').style.display = showSocials ? 'flex' : 'none';
+
+  // Display toggles
+  document.getElementById('avatar-wrap').style.animationPlayState = document.getElementById('toggle-animated').checked ? 'running' : 'paused';
+  document.getElementById('level-bubble').style.display = document.getElementById('toggle-show-xp').checked ? 'block' : 'none';
+  document.querySelector('.achievements-card').style.display = document.getElementById('toggle-show-achievements').checked ? 'block' : 'none';
+  document.querySelector('.projects-card').style.display = document.getElementById('toggle-show-projects').checked ? 'block' : 'none';
+  document.querySelector('.posts-card').style.display = document.getElementById('toggle-show-posts').checked ? 'block' : 'none';
+
+  // Close popup after save
+  settingsPopup.classList.add('hidden');
+});
+
+// Password update
+document.getElementById('save-password-btn').addEventListener('click', () => {
+  const password = document.getElementById('edit-password').value;
+  if(password.length >= 6){
+    alert('Password updated successfully!');
+    document.getElementById('edit-password').value = '';
+  } else {
+    alert('Password must be at least 6 characters.');
+  }
+});
+</script>
+
+      <!-- Premium Ribbon / VIP Glow -->
+      <div id="premium-ribbon" class="premium-ribbon hidden">
+        🌟 VIP Member
+      </div>
+
+      <!-- Optional Modal for Store / Projects -->
+      <div id="modal-overlay" class="modal-overlay hidden">
+        <div class="modal-content">
+          <button class="modal-close" id="modal-close">✖</button>
+          <div id="modal-body">
+            <!-- JS will populate project/store details here -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Optional Notifications -->
+      <div id="notifications-container" class="notifications-container">
+        <!-- JS will append toast messages dynamically -->
+      </div>
+
+      <!-- Footer -->
+      <footer class="profile-footer">
+        <small>© <span id="site-year"></span> DevConnect — Crafted with ❤ for professionals</small>
+      </footer>
+      </section> <!-- close profile-main -->
+  </main> <!-- close profile-shell -->
+  
+  <script src="script2.js" defer></script>
+</body>
+</html>

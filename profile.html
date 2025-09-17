@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aashoo Sharma — Pro Profile</title>
+
+  <!-- Link to CSS (will provide when you say next) -->
+  <link rel="stylesheet" href="style2.css" />
+  <link rel="stylesheet" href="style3.css" />
+  <!-- Optional icon font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- PROFILE SHELL: add data attributes for backend to control visuals
+       Example: data-frame="gold_v1" data-animated="true" data-title="Night Coder" -->
+  <main id="profile-shell"
+        class="profile-shell"
+        data-uid="u_aashoo"
+        data-frame="neon_gold"
+        data-animated-avatar="true"
+        data-message-effect="spark"
+        data-feature-premium="true"
+        data-level="28"
+        data-xp="18450"
+        data-following="230"
+        data-followers="985">
+
+    <!-- Top background banner with parallax / animated gradient -->
+    <section class="profile-banner" id="profile-banner">
+      <div class="banner-overlay">
+        <div class="banner-left">
+          <!-- Avatar + frame wrapper -->
+          <div class="avatar-wrap" id="avatar-wrap" aria-hidden="false">
+            <div class="avatar-frame" id="avatar-frame" data-frame-id="neon_gold">
+              <!-- animated avatar placeholder -->
+              <img src="AashooAvatar.jpg" alt="Aashoo Avatar" class="avatar-img" id="avatar-img">
+              <!-- optional animated SVG glow (will be styled) -->
+              <svg class="avatar-glow" viewBox="0 0 200 200" aria-hidden="true">
+                <defs>
+                  <radialGradient id="g1" cx="50%" cy="30%">
+                    <stop offset="0%" stop-color="#00eaff" stop-opacity="0.9"/>
+                    <stop offset="60%" stop-color="#8000ff" stop-opacity="0.12"/>
+                    <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+                  </radialGradient>
+                </defs>
+                <circle cx="100" cy="100" r="90" fill="url(#g1)"></circle>
+              </svg>
+            </div>
+
+            <!-- level bubble -->
+            <div class="level-bubble" id="level-bubble">
+              <span class="lvl">Lv</span>
+              <strong id="level-num">28</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="banner-right">
+          <!-- Name, pro title, badges -->
+          <div class="name-row">
+            <h1 class="profile-name" id="profile-name">Aashoo Sharma</h1>
+            <div class="title-pill" id="title-pill" data-title="Night Coder">Night Coder</div>
+            <div class="pro-badge" aria-hidden="true">PRO</div>
+          </div>
+
+          <p class="profile-sub">Full-stack Dev • DevOps • Cybersecurity • AI/IoT • Jarvis Builder</p>
+
+          <!-- Action buttons -->
+          <div class="action-row">
+            <button class="btn follow-btn" id="follow-btn" data-following="false">Follow</button>
+            <button class="btn msg-btn" id="message-btn">Message</button>
+            <button class="btn connect-btn" id="connect-btn">Connect</button>
+            <div class="menu-ellipsis">
+              <button class="icon-btn" id="more-btn">⋯</button>
+            </div>
+          </div>
+
+          <!-- quick stats -->
+          <div class="quick-stats">
+            <div class="stat">
+              <div class="stat-num" id="stat-solved">124</div>
+              <div class="stat-label">Problems</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num" id="stat-followers">985</div>
+              <div class="stat-label">Followers</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num" id="stat-rep">4.9</div>
+              <div class="stat-label">Rating</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN BODY: left profile details, center feed/portfolio, right marketplace/achievements -->
+    <section class="profile-main">
+      <div class="col-left">
+        <!-- Profile Card: professional summary -->
+        <div class="card pro-card">
+          <h3>About</h3>
+          <p id="about-text">I build AI assistants, DevOps pipelines and secure IoT systems. Passionate about clean code and automation.</p>
+
+          <ul class="meta-list">
+            <li><strong>Location:</strong> Jaipur, India</li>
+            <li><strong>Works at:</strong> Self-project / Freelance</li>
+            <li><strong>Education:</strong> B.Tech (CSE), Diploma (Electronics)</li>
+            <li><strong>Website:</strong> <a href="#" id="profile-website">AashooSharma.tech</a></li>
+            <li><strong>GitHub:</strong> <a href="#" id="profile-github">github.com/aashoo</a></li>
+          </ul>
+
+          <!-- Skills tags -->
+          <div class="skill-tags" id="skill-tags">
+            <span class="tag">Python</span>
+            <span class="tag">DevOps</span>
+            <span class="tag">CyberSec</span>
+            <span class="tag">IoT</span>
+            <span class="tag">AI/ML</span>
+          </div>
+
+          <!-- Contact quick -->
+          <div class="contact-quick">
+            <a href="#" class="small-btn">Email</a>
+            <a href="#" class="small-btn">Schedule</a>
+          </div>
+        </div>
+
+        <!-- Achievements & inventory -->
+        <div class="card achievements-card">
+          <h3>Achievements & Cosmetics</h3>
+          <div class="badges-row" id="badges-row">
+            <!-- backend will populate earned badges -->
+            <div class="badge-item" data-badge-id="fast_solver">
+              <img src="images/badge.jpg" alt="badge">
+              <div class="badge-meta"><strong>Fast Solver</strong><small>Earned</small></div>
+            </div>
+            <div class="badge-item locked" data-badge-id="season1_champ">
+              <img src="images/badge2.jpg?text=Lock" alt="locked">
+              <div class="badge-meta"><strong>Season Champ</strong><small>Locked</small></div>
+            </div>
+            <!-- store preview -->
+            <div class="store-preview">
+              <button class="small-btn outline" id="open-store">Open Store</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent activity -->
+        <div class="card activity-card">
+          <h3>Recent Activity</h3>
+          <ul class="activity-list" id="activity-list">
+            <li>✔ Solved "Two Sum" • 2h ago</li>
+            <li>🏆 Placed #3 in Weekly Duel • 1d ago</li>
+            <li>📝 Posted "IoT Setup Tutorial" • 3d ago</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-center">
+        <!-- Profile header: showcase preview -->
+        <div class="card showcase-card">
+          <div class="showcase-top">
+            <div class="showcase-title">
+              <h3>Profile Preview</h3>
+              <div class="preview-actions">
+                <button class="small-btn" id="preview-toggle">Preview Effects</button>
+                <button class="small-btn" id="export-profile">Export</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Big Progress bar + XP -->
+          <div class="progress-block">
+            <div class="xp-row">
+              <span id="xp-current">18,450 XP</span>
+              <span id="xp-needed">/ 20,000 XP</span>
+            </div>
+            <div class="progress-bar" role="progressbar" aria-valuenow="18450" aria-valuemin="0" aria-valuemax="20000">
+              <div class="progress-fill" id="progress-fill" style="width: 92.25%"></div>
+            </div>
+            <div class="level-info">Next Level in <strong id="xp-left">1,550 XP</strong></div>
+          </div>
+
+          <!-- Showcase feed: pinned projects & portfolio -->
+          <div class="projects-grid" id="projects-grid">
+            <article class="proj-card">
+              <img src="images/project2.jpg" alt="project">
+              <div class="proj-meta">
+                <h4>Jarvis-style Assistant</h4>
+                <p>Voice + NLP assistant with custom skills.</p>
+                <div class="proj-stats"><span>★ 4.8</span><span>Forks 12</span></div>
+              </div>
+            </article>
+
+            <article class="proj-card">
+              <img src="images/project1.png" alt="project">
+              <div class="proj-meta">
+                <h4>IoT Home Automation</h4>
+                <p>Raspberry Pi + MQTT automation kit.</p>
+                <div class="proj-stats"><span>★ 4.6</span><span>Forks 7</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Posts / Feed with highlight effects -->
+        <div class="card posts-card">
+          <div class="posts-header">
+            <h3>Latest Posts</h3>
+            <div class="posts-filter">
+              <select id="post-filter">
+                <option value="all">All</option>
+                <option value="projects">Projects</option>
+                <option value="protips">Pro Tips</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="post-item" data-post-id="p1">
+            <div class="post-top">
+              <strong>Aashoo Sharma</strong>
+              <span class="post-time">• 3h</span>
+              <span class="post-badge">Pinned</span>
+            </div>
+            <div class="post-body">Deployed a GitHub Actions CI for AWS CDK — pushing tutorial soon. 🚀</div>
+            <div class="post-actions">
+              <button class="icon-btn like">♥ 24</button>
+              <button class="icon-btn comment">💬 8</button>
+              <button class="icon-btn share">🔗</button>
+              <button class="btn small" data-flag-msg-effect="true">Message Highlight</button>
+            </div>
+          </div>
+
+          <div class="post-item" data-post-id="p2">
+            <div class="post-top"><strong>Aashoo Sharma</strong><span class="post-time">• 2d</span></div>
+            <div class="post-body">Solved Reverse String in 45s — optimizing approach with DP.</div>
+            <div class="post-actions">
+              <button class="icon-btn like">♥ 56</button>
+              <button class="icon-btn comment">💬 12</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="col-right">
+        <!-- Store / cosmetic quick shop -->
+        <div class="card store-card">
+          <h3>Cosmetics Store</h3>
+          <div class="store-items">
+            <div class="store-item" data-item-id="frame_neon_gold">
+              <img src="images/neon-frame.jpg" alt="">
+              <div class="store-meta"><strong>Neon Gold Frame</strong><small>1,000 coins</small></div>
+              <button class="small-btn buy-btn">Buy</button>
+            </div>
+
+            <div class="store-item" data-item-id="title_nightmaster">
+              <img src="images/night-coder.jpg" alt="">
+              <div class="store-meta"><strong>Title: NightMaster</strong><small>500 coins</small></div>
+              <button class="small-btn buy-btn">Buy</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Leaderboard snippet -->
+        <div class="card mini-leaderboard">
+          <h3>Leaderboard</h3>
+          <ol class="leader-list">
+            <li><strong>Aashoo</strong> <span>#1</span></li>
+            <li><strong>Ayushi</strong> <span>#2</span></li>
+            <li><strong>Rahul</strong> <span>#3</span></li>
+          </ol>
+          <a href="#" class="small-btn outline">View Full</a>
+        </div>
+
+        <!-- Quick settings -->
+        <div class="card quick-settings">
+          <h3>Profile Settings</h3>
+          <label class="toggle"><input type="checkbox" id="toggle-animated" checked> Animated Avatar</label>
+          <label class="toggle"><input type="checkbox" id="toggle-msgfx" checked> Message Effects</label>
+          <label class="toggle"><input type="checkbox" id="toggle-probadge" checked> Show PRO Badge</label>
+        </div>
+
+      </aside>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="profile-footer">
+      <small>© <span id="site-year"></span> DevConnect — Crafted with ❤ for professionals</small>
+    </footer>
+
+  </main>
+
+  <!-- Link to JS (will provide when you say next) -->
+  <script src="script2.js" defer></script>
+</body>
+</html>

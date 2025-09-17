@@ -1,0 +1,222 @@
+/* ===========================
+   style.css — Pro Cyberpunk Profile (Final)
+   Author: Ayushi ❤️ for Aashoo
+   =========================== */
+
+/* Reset / Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --bg-1: #05060a;
+  --bg-2: #071027;
+  --card: rgba(18,22,33,0.84);
+  --glass: rgba(255,255,255,0.04);
+  --neon-cyan: #00eaff;
+  --neon-mag: #a84bff;
+  --accent: linear-gradient(90deg, var(--neon-cyan), #7b2cff 60%);
+  --muted: #9aa4b2;
+  --glass-border: rgba(255,255,255,0.06);
+  --glass-shadow: 0 8px 30px rgba(10,10,20,0.55);
+  --radius: 12px;
+  --glass-blur: 8px;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Poppins", "Orbitron", system-ui, Arial, sans-serif;
+  background: radial-gradient(circle at 10% 10%, #071428 0%, #04060b 30%, #02030a 100%);
+  color: #e8f1f8;
+  overflow-x: hidden;
+}
+
+/* Page shell */
+.profile-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Banner */
+.profile-banner {
+  width: 100%;
+  max-height: 380px;
+  background: linear-gradient(180deg, rgba(8,12,20,0.6), rgba(6,8,12,0.45) 70%),
+    radial-gradient(600px 200px at 10% 30%, rgba(123,44,255,0.07), transparent 15%),
+    radial-gradient(500px 180px at 85% 35%, rgba(0,234,255,0.03), transparent 12%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 30px 20px;
+  box-shadow: inset 0 30px 60px rgba(2, 4, 10, 0.6);
+  position: relative;
+}
+
+/* Banner overlay */
+.banner-overlay {
+  width: 1200px;
+  max-width: 95%;
+  display: flex;
+  gap: 28px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+/* Avatar */
+.avatar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  position: relative;
+}
+.avatar-frame {
+  width: 160px;
+  height: 160px;
+  border-radius: 20px;
+  position: relative;
+  border: 1px solid var(--glass-border);
+  background: linear-gradient(145deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  box-shadow: 0 8px 30px rgba(11,12,20,0.6), 0 0 40px rgba(0,234,255,0.06) inset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  overflow: hidden;
+  transition: transform .35s, box-shadow .35s;
+}
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 2px solid rgba(255,255,255,0.04);
+}
+.avatar-frame[data-frame-id="neon_gold"] {
+  border-image: linear-gradient(120deg, var(--neon-cyan), var(--neon-mag)) 1;
+  box-shadow: 0 18px 50px rgba(123,44,255,0.12), 0 0 24px rgba(0,234,255,0.06);
+}
+.profile-shell[data-feature-premium="true"] .avatar-frame {
+  animation: framePulse 3s ease-in-out infinite;
+}
+@keyframes framePulse {
+  0%,100% { transform: scale(1); box-shadow: 0 10px 30px rgba(123,44,255,0.06); }
+  50% { transform: scale(1.02); box-shadow: 0 30px 60px rgba(123,44,255,0.1); }
+}
+
+/* Level bubble */
+.level-bubble {
+  position: absolute;
+  right: -14px;
+  bottom: -12px;
+  background: linear-gradient(90deg,#001827,#002a3b);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 8px 12px;
+  border-radius: 28px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--neon-cyan);
+  font-weight: 700;
+  font-size: 14px;
+  text-shadow: 0 0 8px rgba(0,234,255,0.12);
+}
+
+/* Banner Right */
+.banner-right {
+  flex: 1;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+  min-height: 150px;
+}
+.profile-name {
+  font-family: "Orbitron", sans-serif;
+  font-size: 30px;
+  color: #dff7ff;
+  text-shadow: 0 0 10px rgba(0,234,255,0.12);
+}
+.title-pill {
+  background: rgba(255,255,255,0.02);
+  padding: 6px 12px;
+  border-radius: 999px;
+  color: var(--neon-mag);
+  border: 1px solid rgba(255,255,255,0.04);
+  font-weight: 600;
+  font-size: 13px;
+}
+.pro-badge {
+  margin-left: 6px;
+  background: linear-gradient(90deg,#ffd166,#ff7b00);
+  color: #0b0711;
+  padding: 6px 8px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+/* Actions */
+.btn {
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 10px 14px;
+  transition: transform .18s, box-shadow .18s;
+}
+.btn:hover { transform: translateY(-4px); }
+.follow-btn {
+  background: linear-gradient(90deg,#00eaff,#7b2cff);
+  color: #041018;
+  border: none;
+  box-shadow: 0 12px 40px rgba(0,234,255,0.12);
+}
+
+/* Quick stats */
+.quick-stats { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 12px; }
+.stat-num { font-size: 20px; font-weight: 700; color: #fff; }
+.stat-label { font-size: 13px; color: var(--muted); }
+
+/* Layout */
+.profile-main {
+  width: 1200px;
+  max-width: 95%;
+  display: grid;
+  grid-template-columns: 300px 1fr 300px;
+  gap: 20px;
+  margin-top: 20px;
+  padding-bottom: 40px;
+}
+.card {
+  background: rgba(255,255,255,0.02);
+  border-radius: var(--radius);
+  padding: 18px;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .profile-main { grid-template-columns: 260px 1fr; }
+  .col-right { display: none; }
+}
+@media (max-width: 900px) {
+  .banner-overlay { flex-direction: column; align-items: center; text-align: center; }
+  .avatar-frame { width: 120px; height: 120px; }
+  .profile-name { font-size: 22px; }
+  .profile-main { grid-template-columns: 1fr; padding: 0 14px; }
+}
+@media (max-width: 600px) {
+  .profile-banner { padding: 16px; }
+  .btn { font-size: 14px; padding: 8px 12px; }
+  .stat-num { font-size: 18px; }
+}
